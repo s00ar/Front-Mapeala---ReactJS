@@ -1,0 +1,399 @@
+@font-face {
+  font-family: 'Abyssinica SIL Regular';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Abyssinica SIL Regular'), url('./fonts/AbyssinicaSIL-Regular.woff') format('woff');
+  }
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.body {
+  background-color: hsl(28, 100%, 92%, 38%);
+}
+
+.navbar {
+  background-color: rgb(207, 199, 199);
+}
+
+.logo-mapeala-nav {
+  width: 120px;
+}
+
+.a-menu {
+  font-family: 'Abhaya Libre SemiBold';
+  color: black;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.header-3 {
+  font-size: 50px;
+  font-family: 'Abyssinica SIL Regular';
+}
+.redes-sociales {
+  text-align: right;
+  padding-top: 20px;
+}
+.social-icon {
+  width: 50px;
+  height: auto;
+  padding: 0 5px;
+}
+
+.hero {
+  padding: 20px 0;
+}
+.logo-mapeala {
+  width: 400px;
+  height: auto;
+  margin-top: -40px;
+}
+
+.col-texto {
+  margin-left: -300px;
+  font-family: 'Abyssinica SIL Regular';
+  font-size: 32px;
+  text-align: left;
+  color: rgb(94, 91, 91);
+  padding-top: 100px;
+}
+
+.slider-text {
+  font-size: 24px;
+  font-family: 'Sahitya';
+}
+.google-maps {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.mapa {
+  width: 90%;
+  height: 500px;
+  border: solid 10px gray; 
+}
+.heading-2 {
+  text-align: center;
+  font-family: 'Sahitya';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 50px;
+  padding: 15px 0px;
+  background-color: aquamarine;
+  margin: 30px 50px;
+}
+
+.slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-centrado {
+  padding: 50px 0;
+  width: 50%;
+
+}
+
+.slider-caption .header-3 {
+  font-size: 30px;
+}
+.slider-caption .slider-text {
+  font-size: 18px;
+}
+
+.faq {
+ margin: 0;
+ padding: 0;
+ width: 100%;
+}
+
+.accordion-faq {
+  z-index: 10;
+  position: relative;
+  width: 100%;
+  margin-left: 150px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+button.accordion-button {
+  padding: 40px 50px;
+  font-size: 24px;
+}
+
+div.accordion-body {
+  padding: 40px 50px;
+  font-size: 16px;
+}
+
+.fondo-faq {
+  z-index: 0;
+  width: auto;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.dos-colores {
+  background: linear-gradient(to right, #fcefef 10%, #fcd29f 80%, rgb(31, 219, 157) 10%, rgb(153, 223, 199) 100%);
+}
+
+.contacto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.formulario {
+  text-align: left;
+}
+
+input.form-control {
+  width: 75%;
+}
+
+button.btn.btn-primary {
+  background-color: rgb(31, 219, 157);
+  border-color: rgb(31, 219, 157);
+  font-weight: 600;
+}
+
+button.btn.btn-primary:hover {
+  background-color: white;
+  border: solid 2px rgb(31, 219, 157);
+  color: rgb(31, 219, 157);
+
+}
+
+.c-center {
+  width: 70%;
+  padding: 40px 0;
+}
+
+.footer {
+  background-color: rgb(207, 199, 199);
+}
+
+.col-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 15px;
+}
+
+.col-center {
+  width: 60%;
+  padding-left: 6%;
+}
+
+.row {
+  --bs-gutter-x: none !important;
+}
+
+.lista{
+  list-style: none;
+  font-size: 20px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.redes-footer {
+  padding: 0;
+}
+
+.copyright {
+  font-size: 16px;
+  text-align: center;
+  padding: 5px 0;
+  border-top: solid 1px black;
+}
+
+@media screen and (max-width:768px) {
+  .a-menu {
+    font-size: 20px;
+  }
+
+  .logo-mapeala {
+    width: 200px;
+    height: auto;
+    margin-top: 0px;
+  }
+
+  .col-texto {
+    margin-left: -300px;
+    font-family: 'Abyssinica SIL Regular';
+    font-size: 24px;
+    text-align: left;
+    color: rgb(94, 91, 91);
+    padding-top: 80px;
+  }
+
+  .slider-centrado {
+    width: 75%;
+  }
+  .header-3 {
+    font-size: 35px;
+  }
+
+  .slider-text {
+    font-size: 20px;
+  }
+
+  .accordion-faq {
+    z-index: 10;
+    position: relative;
+    width: 100%;
+    margin-left: 50px;
+  }
+
+  button.accordion-button {
+    padding: 15px 15px;
+    font-size: 18px;
+  }
+  
+  div.accordion-body {
+    padding: 15px 15px;
+    font-size: 14px;
+  }
+  
+  .fondo-faq {
+    width: 100%;
+  }
+
+  .img-contacto {
+    width: 90%;
+    padding-top: 100px;
+  }
+
+  .col-center {
+    width: 75%;
+  }
+
+  .lista {
+    font-size: 16px;
+  }
+
+  .social-icon {
+    width: 40px;
+  }
+}
+
+@media screen and (max-width:425px) {
+  .a-menu {
+    font-size: 16px;
+  }
+
+  .logo-mapeala {
+    width: 200px;
+    height: auto;
+    margin-top: 0px;
+  }
+
+  .social-icon {
+    width: 30px;
+  }
+
+  h3.header-3 {
+    font-size: 24px;
+  }
+
+  p.slider-text {
+    font-size: 14px;
+  }
+
+  .col-texto {
+    margin-left: -200px;
+    font-family: 'Abyssinica SIL Regular';
+    font-size: 18px;
+    text-align: left;
+    color: rgb(94, 91, 91);
+    padding-top: 120px;
+  }
+
+  .mapa {
+    width: 90%;
+    height: 300px;
+    margin-right: 10px;
+  }
+
+  .slider-centrado {
+    padding: 30px 0;
+    width: 85%;
+  }
+
+  .slider-caption .header-3 {
+    font-size: 20px;
+  }
+
+  .slider-caption .slider-text {
+    font-size: 12px;
+  }
+
+  .accordion-faq {
+    position: relative;
+    width: auto;
+    margin-left: 0px;
+    padding: 0 20px;
+  }
+
+  button.accordion-button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  div.accordion-body {
+    padding: 10px 15px;
+    font-size: 10px;
+  }
+
+  .right-faq {
+    display: none;
+  }
+
+  .img-contacto {
+    width: 90%;
+  }
+  .img {
+    display: none;
+  }
+
+  input.form-control {
+    width: 100%;
+  }
+
+  .col-center {
+    width: 100%;
+  }
+
+  .h3-footer {
+    font-size: 16px;
+  }
+
+  .lista {
+    font-size: 12px;
+  }
+
+  .social-icon {
+    width: 26px;
+    padding: 0 3px;
+  }
+
+  .copyright {
+    font-size: 12px;
+  }
+  
+}
