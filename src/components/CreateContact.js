@@ -23,7 +23,7 @@ const CreateContact = () => {
         setEmail("");
         setPhone("");
         setMessage("");
-      } 
+    } 
 
     const store = async (e) => {
         e.preventDefault();
