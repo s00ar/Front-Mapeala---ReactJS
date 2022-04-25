@@ -15,20 +15,15 @@ const CreateContact = () => {
 
     const navigate = useNavigate();
 
-    //Resetear formulario al enviar
-    function handleSubmit(e) {
+     //Validar y resetear formulario al enviar
+    async function handleSubmit(e) {
         e.preventDefault();
         if (name === '' || email === '' || phone === '' || message === '') {
             alert("Por favor, llene todos los campos");
         } else {
-            axios.post(endpoint, {
-                name: name,
-                email: email,
-                phone: phone,
-                message: message
-            })
-                .then(function (response) {
-                    console.log(response);
+            await axios.post(endpoint, {name: name, email: email, phone: phone, message: message});
+            navigate('/');            
+                then(function (response) {
                     alert("Mensaje enviado");
                     navigate("/");
                 })
@@ -38,13 +33,6 @@ const CreateContact = () => {
             setPhone("");
             setMessage("");
             } 
-        }
-        const store = async (e) => {
-            e.preventDefault();
-            await axios.post(endpoint, {name: name, email: email, phone: phone, message: message});
-            navigate('/');
-            console.log("ENVIO AL SERVER",store) 
-    
         }
 return (
         <div className="container">
