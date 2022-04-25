@@ -32,24 +32,20 @@ const CreateContact = () => {
                     alert("Mensaje enviado");
                     navigate("/");
                 })
-                .catch(function (error) {
-                    console.log(error);
-                    alert("Error al enviar el mensaje");
-                });
+                console.log("PRUEBA VALIDACIÓN",name, email, phone, message);
             setName("");
             setEmail("");
             setPhone("");
             setMessage("");
             } 
         }
-    
         const store = async (e) => {
             e.preventDefault();
             await axios.post(endpoint, {name: name, email: email, phone: phone, message: message});
             navigate('/');
-            console.log(store) 
+            console.log("ENVIO AL SERVER",store) 
     
-        }  
+        }
 return (
         <div className="container">
             <div className="row">
