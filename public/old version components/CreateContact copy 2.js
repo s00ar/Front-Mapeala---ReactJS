@@ -1,5 +1,4 @@
 import axios from "axios";
-import axios from "axios";
 
 import React, { useState } from 'react';
 
@@ -24,7 +23,7 @@ const CreateContact = () => {
         setEmail("");
         setPhone("");
         setMessage("");
-    } 
+      } 
 
     const store = async (e) => {
         e.preventDefault();
@@ -34,7 +33,7 @@ const CreateContact = () => {
 
     }          
     
-return (
+  return (
     <div>
 
         <div class="card-body">
