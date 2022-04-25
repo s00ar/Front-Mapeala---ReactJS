@@ -19,7 +19,7 @@ const CreateContact = () => {
         e.preventDefault();
         if (name === '' || email === '' || phone === '' || message === '') {
             alert("Por favor, llene todos los campos");
-        } else if (isNaN(phone) {
+        } else if (isNaN(phone)) {
             alert("Por favor, ingrese un número de teléfono válido");
         } else if (typeof email!== "undefined") {
                 let posicionArroba = email.lastIndexOf('@');
