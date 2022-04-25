@@ -15,75 +15,35 @@ const CreateContact = () => {
 
     const navigate = useNavigate();
 
-    //Resetear formulario al enviar
+    //Resetear y validar formulario al enviar
     function handleSubmit(e) {
         e.preventDefault();
         if (name === '' || email === '' || phone === '' || message === '') {
             alert("Por favor, llene todos los campos");
-        } else {
-            axios.post(endpoint, {
-                name: name,
-                email: email,
-                phone: phone,
-                message: message
-            })
-                .then(function (response) {
-                    console.log(response);
-                    alert("Mensaje enviado");
-                    navigate("/");
-                })
-                .catch(function (error) {
-                    console.log(error);
-                    alert("Error al enviar el mensaje");
-                });
-            setName("");
-            setEmail("");
-            setPhone("");
-            setMessage("");
-            } 
+        } else if (typeof email!== "undefined") {
+                let posicionArroba = email.lastIndexOf('@');
+                let posicionPunto = email.lastIndexOf('.');
+    
+                if (!(posicionArroba < posicionPunto && posicionArroba > 0 && email.indexOf('@@') == -1 && posicionPunto > 2 && (email.length - posicionPunto) > 2)) {
+                    alert("Por favor, ingresa un correo válido.");
+                } else {
+        setName('');
+        setEmail('');
+        setPhone('');
+        setMessage('');
+        alert("Mensaje enviado correctamente");
+    } 
         }
-return (
-        <div className="container">
-            <div className="row">
-                <div className="col-md-12">
-                    <h1>Contacto</h1>
-                    <form onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <label htmlFor="name">Nombre</label>
-                            <input type="text" className="form-control" id="name" aria-describedby="nameHelp" placeholder="Nombre" value={name} onChange={e => setName(e.target.value)} />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="email">Email</label>
-                            <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Email" value={email} onChange={e => setEmail(e.target.value)} />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="phone">Teléfono</label>
-                            <input type="text" className="form-control" id="phone" aria-describedby="phoneHelp" placeholder="Teléfono" value={phone} onChange={e => setPhone(e.target.value)} />
-                        </div>
-                        <div className="form-group">
-                            <label htmlFor="message">Mensaje</label>
-                            <textarea className="form-control" id="message" rows="3" value={message} onChange={e => setMessage(e.target.value)}></textarea>
-                        </div>
-                        <button type="submit" className="btn btn-primary">Enviar</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    );
-/* 
-
+    }
     const store = async (e) => {
         e.preventDefault();
         await axios.post(endpoint, {name: name, email: email, phone: phone, message: message});
         navigate('/');
-        console.log(store) 
-
-    }          
-
-  return (
+        }    
+return (
     <div>
 
-        <div class="card-body">
+        <div className="card-body">
 
             <form onSubmit={store}>
                 <div className="mb-3">
@@ -93,19 +53,23 @@ return (
                         onChange={(e)=>setName(e.target.value)}
                         type="text"
                         className="form-control"
+                        placeholder="Ingrese nombre y apellido"
                     />
                 </div>
 
                 <div className="mb-3">
-                    <label className="form-label">Email</label>
+                    <label className="form-label" htmlFor="email">Email</label>
                     <input
                         value={email}
                         onChange={(e)=>setEmail(e.target.value)}
-                        type="text"
+                        type="email"
                         className="form-control"
+                        id="email"
+                        aria-describedby="emailHelp"
+                        placeholder="Email"
                     />
                 </div>
-
+                
                 <div className="mb-3">
                     <label className="form-label">Teléfono</label>
                     <input
@@ -113,6 +77,7 @@ return (
                         onChange={(e)=>setPhone(e.target.value)}
                         type="text"
                         className="form-control"
+                        placeholder="Ingrese teléfono"
                     />
                 </div>
 
@@ -123,13 +88,17 @@ return (
                         onChange={(e)=>setMessage(e.target.value)}
                         type="text"
                         className="form-control"
+                        placeholder="Ingrese mensaje"
                     />
                 </div>
                 <button onClick={handleSubmit} type="submit" className="btn btn-primary">Enviar</button>
             </form>
+
         </div>
+
+
     </div>
-  ) */
+)
 }
 
 export default CreateContact;
