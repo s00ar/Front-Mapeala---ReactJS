@@ -14,17 +14,28 @@ const CreateContact = () => {
     const [message, setMessage] = useState('');
 
     const navigate = useNavigate();
-
-    //Resetear formulario al enviar
+    //Resetear y validar formulario al enviar
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(name,email,phone,message);
-        setName("");
-        setEmail("");
-        setPhone("");
-        setMessage("");
-      } 
+        if (name === '' || email === '' || phone === '' || message === '') {
+            alert("Por favor, llene todos los campos");
+        } else if (isNaN(phone) {
+            alert("Por favor, ingrese un número de teléfono válido");
+        } else if (typeof email!== "undefined") {
+                let posicionArroba = email.lastIndexOf('@');
+                let posicionPunto = email.lastIndexOf('.');
 
+                if (!(posicionArroba < posicionPunto && posicionArroba > 0 && email.indexOf('@@') == -1 && posicionPunto > 2 && (email.length - posicionPunto) > 2)) {
+                    alert("Por favor, ingresa un correo válido.");
+                } else {
+        setName('');
+        setEmail('');
+        setPhone('');
+        setMessage('');
+        alert("Mensaje enviado correctamente");
+            navigate("/");}
+        }
+    }
     const store = async (e) => {
         e.preventDefault();
         await axios.post(endpoint, {name: name, email: email, phone: phone, message: message});
@@ -33,7 +44,7 @@ const CreateContact = () => {
 
     }          
     
-  return (
+return (
     <div>
 
         <div class="card-body">
@@ -85,7 +96,7 @@ const CreateContact = () => {
 
 
     </div>
-  )
+    )
 }
 
 export default CreateContact;
