@@ -42,6 +42,14 @@ const CreateContact = () => {
             setMessage("");
             } 
         }
+    
+        const store = async (e) => {
+            e.preventDefault();
+            await axios.post(endpoint, {name: name, email: email, phone: phone, message: message});
+            navigate('/');
+            console.log(store) 
+    
+        }  
 return (
         <div className="container">
             <div className="row">
