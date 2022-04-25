@@ -15,35 +15,28 @@ const CreateContact = () => {
 
     const navigate = useNavigate();
 
-    //Resetear y validar formulario al enviar
+    //Resetear formulario al enviar
     function handleSubmit(e) {
         e.preventDefault();
-        if (name === '' || email === '' || phone === '' || message === '') {
-            alert("Por favor, llene todos los campos");
-        } else if (typeof email!== "undefined") {
-                let posicionArroba = email.lastIndexOf('@');
-                let posicionPunto = email.lastIndexOf('.');
-    
-                if (!(posicionArroba < posicionPunto && posicionArroba > 0 && email.indexOf('@@') == -1 && posicionPunto > 2 && (email.length - posicionPunto) > 2)) {
-                    alert("Por favor, ingresa un correo válido.");
-                } else {
-        setName('');
-        setEmail('');
-        setPhone('');
-        setMessage('');
-        alert("Mensaje enviado correctamente");
-    } 
-        }
-    }
+        console.log(name,email,phone,message);
+        setName("");
+        setEmail("");
+        setPhone("");
+        setMessage("");
+      } 
+
     const store = async (e) => {
         e.preventDefault();
         await axios.post(endpoint, {name: name, email: email, phone: phone, message: message});
         navigate('/');
-        }    
-return (
+        console.log(store) 
+
+    }          
+    
+  return (
     <div>
 
-        <div className="card-body">
+        <div class="card-body">
 
             <form onSubmit={store}>
                 <div className="mb-3">
@@ -53,23 +46,19 @@ return (
                         onChange={(e)=>setName(e.target.value)}
                         type="text"
                         className="form-control"
-                        placeholder="Ingrese nombre y apellido"
                     />
                 </div>
 
                 <div className="mb-3">
-                    <label className="form-label" htmlFor="email">Email</label>
+                    <label className="form-label">Email</label>
                     <input
                         value={email}
                         onChange={(e)=>setEmail(e.target.value)}
-                        type="email"
+                        type="text"
                         className="form-control"
-                        id="email"
-                        aria-describedby="emailHelp"
-                        placeholder="Email"
                     />
                 </div>
-                
+
                 <div className="mb-3">
                     <label className="form-label">Teléfono</label>
                     <input
@@ -77,7 +66,6 @@ return (
                         onChange={(e)=>setPhone(e.target.value)}
                         type="text"
                         className="form-control"
-                        placeholder="Ingrese teléfono"
                     />
                 </div>
 
@@ -88,7 +76,6 @@ return (
                         onChange={(e)=>setMessage(e.target.value)}
                         type="text"
                         className="form-control"
-                        placeholder="Ingrese mensaje"
                     />
                 </div>
                 <button onClick={handleSubmit} type="submit" className="btn btn-primary">Enviar</button>
@@ -98,7 +85,7 @@ return (
 
 
     </div>
-)
+  )
 }
 
 export default CreateContact;
